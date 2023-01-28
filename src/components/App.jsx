@@ -6,6 +6,7 @@ import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
 
 import styles from './app.module.css';
+import Notiflix from 'notiflix';
 
 class App extends Component {
   state = {
@@ -33,7 +34,7 @@ class App extends Component {
         );
       })
     ) {
-      return alert(`${contact.name} is already in contacts`);
+      return Notiflix.Notify.failure(`${contact.name} is already in contacts`);
     }
     this.setState(prevState => ({
       contacts: [contact, ...prevState.contacts],
