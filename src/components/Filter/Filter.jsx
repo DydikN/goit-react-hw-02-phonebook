@@ -14,7 +14,7 @@ const Filter = ({ filter }) => {
   );
 };
 
+export default Filter;
 Filter.prototype = {
   filter: PropTypes.func.isRequired,
 };
-export default Filter;

@@ -28,7 +28,9 @@ class App extends Component {
 
     if (
       this.state.contacts.find(item => {
-        return item.name === contact.name;
+        return (
+          item.name.toLocaleLowerCase() === contact.name.toLocaleLowerCase()
+        );
       })
     ) {
       return alert(`${contact.name} is already in contacts`);
