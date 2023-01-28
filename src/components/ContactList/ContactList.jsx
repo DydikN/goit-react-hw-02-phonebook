@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 import styles from './contact-list.module.css';
 
-const ContactList = ({ filter, deleteContact }) => {
+const ContactList = ({ contacts, deleteContact }) => {
   return (
     <ul className={styles.list}>
-      {filter.map(({ id, name, number }) => (
+      {contacts.map(({ id, name, number }) => (
         <li className={styles.item} key={id}>
           <p className={styles.text}>
             {name}: {number}
@@ -27,7 +27,7 @@ export default ContactList;
 
 ContactList.propTypes = {
   deleteContact: PropTypes.func.isRequired,
-  filter: PropTypes.arrayOf(
+  contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
